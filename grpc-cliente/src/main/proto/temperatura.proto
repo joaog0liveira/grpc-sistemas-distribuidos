@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "br.com.ifgoiano";
+option java_multiple_files = true;
+option java_outer_classname = "MeteorologiaServiceProto";
+
+service MeteorologiaService {
+  rpc ObterTemperaturaAtual (CidadeRequest) returns (TemperaturaResponse);
+  rpc PrevisaoCincoDias (CidadeRequest) returns (PrevisaoResponse);
+  rpc ListarCidades (Vazio) returns (CidadesResponse);
+  rpc CadastrarCidade (CidadeRequest) returns (MensagemResponse);
+  rpc EstatisticasClimaticas (CidadeRequest) returns (EstatisticasResponse);
+}
+
+message CidadeRequest {
+  string nome = 1;
+}
+
+message TemperaturaResponse {
+  float temperatura = 1;
+}
+
+message PrevisaoResponse {
+  repeated float temperaturas = 1;
+}
+
+message CidadesResponse {
+  repeated string nomes = 1;
+}
+
+message MensagemResponse {
+  string mensagem = 1;
+}
+
+message EstatisticasResponse {
+  float media = 1;
+  float minima = 2;
+  float maxima = 3;
+}
+
+message Vazio {}

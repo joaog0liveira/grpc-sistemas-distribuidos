@@ -1,0 +1,8 @@
+grpc:
+  server:
+    port: 9000
+
+  client:
+    mtol:
+      address: static://localhost:9090
+      negotiationType: plaintext
