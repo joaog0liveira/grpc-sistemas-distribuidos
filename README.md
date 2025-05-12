@@ -1,4 +1,4 @@
-# 🌤️ Sistema de Previsão do Tempo com Spring Boot e gRPC
+# Sistema de Previsão do Tempo com Spring Boot e gRPC
 
 O sistema é composto por duas aplicações Spring Boot: uma que atua como servidor gRPC, oferecendo serviços meteorológicos simulados;e outra como cliente REST, que converte chamadas HTTP em chamadas gRPC.
 O cliente usa o @GrpcClient do Spring para se comunicar via MeteorologiaServiceGrpc.MeteorologiaServiceBlockingStub, conectando-se ao servidor gRPC que escuta na porta 9090. 
@@ -6,7 +6,7 @@ As operações disponíveis incluem cadastro e listagem de cidades, previsão de
 
 ---
 
-## 📦 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Java 17+
 - Spring Boot
@@ -16,9 +16,9 @@ As operações disponíveis incluem cadastro e listagem de cidades, previsão de
 
 ---
 
-## ⚙️ Estrutura do Sistema
+## Estrutura do Sistema
 
-### 🔹 Servidor gRPC
+### Servidor gRPC
 
 - Implementa o serviço `MeteorologiaService` definido no arquivo `.proto`.
 - Simula um "banco de dados" com um `ConcurrentHashMap<String, List<Float>>` para armazenar cidades e suas temperaturas.
